@@ -5,10 +5,10 @@
 
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.width = 500; //window.innerWidth
+canvas.height = 500; //window.innerHeight
 var particles = [];
-var num_particles = 1000;//Cantidad de particulas en el viewport
+var num_particles = 5;//Cantidad de particulas en la window
 
 //Funcion para obtener un color random, pero no colores oscuros.
 function GetRandomColor() {
