@@ -17,13 +17,17 @@
             <div class="gridP">
                 <div class="center2"> 
                     <h3>Particulas</h3>
-                    <p>Magnitud:</p>
-                    <input type="number" id="magnitudP"  >
+                    <div class="gridC">
+                        <p>Velocidad inicial:</p>
+                        <p>Notacion cientifica:</p>
+                        <input class="size2" type="number" id="magnitudP"  >
+                        <input class="size" type="number" id="elevado"  >
+                    </div>
                     <p>Direccion:</p>
                     <input type="number" id="direccionP"  >
                     <p>Elije una particula: </p>
                     <select id="particula">
-                        <option value="None">Ninguno</option>
+                        <option value="">Ninguno</option>
                         <option value="1">Electrón</option>
                         <option value="2">Positrón</option>
                         <option value="3">Protón</option>
@@ -32,14 +36,18 @@
                         <option value="6">Núcleo de deuterio</option>
                         <option value="7">Muón</option>
                         <option value="8">Tau</option>
-                        <option value="9">Bosón</option>
+                        <option value="9">Antimuón</option>
                         <option value="10">Mesón</option>
                     </select>
                 </div>
                 <div class="center2">
                     <h3>Campo eléctrico</h3>   
-                    <p>Magnitud:</p>
-                    <input type="number" id="magnitudE"  >
+                    <div class="gridC">
+                        <p>Magnitud:</p>
+                        <p>Notacion cientifica:</p>
+                        <input class="size2" type="number" id="magnitudE">
+                        <input class="size" type="number" id="elevado2">
+                    </div>
                     <p>Sentido:</p>
                     <select id="direccionE">
                         <option value="1">Arriba</option>
@@ -51,7 +59,7 @@
                 <button class="boton1" id="boton" onclick="createParticle()">Simular</button>
             </div>
         </div>
-        <div>
+        <div class="center3">
             <div>
                 <canvas id="canvas"></canvas>
             </div>
