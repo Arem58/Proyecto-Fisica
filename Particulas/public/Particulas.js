@@ -21,6 +21,7 @@ var velX = 4 * Math.random() - 2;
 var velY = 4 * Math.random() - 2;
 var velocidadI;
 var radianes;
+var velocidadD;
 
 //Funcion para obtener un color random, pero no colores oscuros.
 function GetRandomColor() {
@@ -51,18 +52,12 @@ Particle.prototype.Draw = function (ctx) {
 }
 Particle.prototype.Update = function () {
     if(direccion === 1){
-        velocidadX = 0;
         velocidadY = velocidadI + (aceleration * time);
     }else if(direccion === 2){
-        velocidadX = velocidadI;
         velocidadY = aceleration * time;
     }else if(direccion === 3){
-        velocidadX = velocidadI * Math.cos(radianes);
-        if(time === 0){
-            velocidadY = velocidadI * Math.sin(radianes);
-        }else{
-            velocidadY += (aceleracion * time); 
-        }
+        velocidadY = velocidadD + (aceleration * time); 
+        console.log(velocidadY);
     }
     this.x += velocidadX;
     this.y += velocidadY;
@@ -104,10 +99,9 @@ function createParticle(){
         MagnitudE = convert_to_float(MagnitudE);
         Notacion = convert_to_float(Notacion);
         Notacion2 = convert_to_float(Notacion2);
-
         MagnitudP *= Math.pow(10, Notacion);
         MagnitudE *= Math.pow(10, Notacion2);
-        velocidadI = MagnitudP;
+        velocidadI = MagnitudP/Math.pow(10, Notacion);
 
         //Tamanio de las particulas
         if(Size === '1'){
@@ -127,11 +121,16 @@ function createParticle(){
         //direccion de la particula
         if(DireccionP === 0 || DireccionP === 180){
             direccion = 1;
+            velocidadX = 0;
         }else if(DireccionP === 90){
             direccion = 2;
+            velocidadX = velocidadI;
         }else{
             direccion = 3;
             degrees_to_radians(DireccionP);
+            velocidadX = velocidadI * Math.cos(radianes);
+            velocidadD = velocidadI * Math.sin(radianes);
+            console.log(velocidadD);
         }
 
 
@@ -226,9 +225,12 @@ function createParticle(){
     }
 }
 
+function reload(){
+    location.reload();
+}
+
 const aceleracion = (masa, carga, magnitudE, notacion) =>{
     aceleration = ((carga*magnitudE)/masa)/Math.pow(10, (notacion + 13));
-    console.log(aceleration);
 }   
 
 function degrees_to_radians(degrees)

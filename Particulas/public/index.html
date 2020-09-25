@@ -23,22 +23,27 @@
                         <input class="size2" type="number" id="magnitudP"  >
                         <input class="size" type="number" id="elevado"  >
                     </div>
-                    <p>Direccion:</p>
-                    <input type="number" id="direccionP"  >
-                    <p>Elije una particula: </p>
-                    <select id="particula">
-                        <option value="">Ninguno</option>
-                        <option value="1">Electrón</option>
-                        <option value="2">Positrón</option>
-                        <option value="3">Protón</option>
-                        <option value="4">Neutrón</option>
-                        <option value="5">Partícula alfa</option>
-                        <option value="6">Núcleo de deuterio</option>
-                        <option value="7">Muón</option>
-                        <option value="8">Tau</option>
-                        <option value="9">Antimuón</option>
-                        <option value="10">Mesón</option>
-                    </select>
+                    <div class="space">
+                        <p>Direccion:</p>
+                        <input type="number" id="direccionP"  >
+                    </div>
+                    <div class="space">
+                        <p>Elije una particula: </p>
+                        <select id="particula">
+                            <option value="">Ninguno</option>
+                            <option value="1">Electrón</option>
+                            <option value="2">Positrón</option>
+                            <option value="3">Protón</option>
+                            <option value="4">Neutrón</option>
+                            <option value="5">Partícula alfa</option>
+                            <option value="6">Núcleo de deuterio</option>
+                            <option value="7">Muón</option>
+                            <option value="8">Tau</option>
+                            <option value="9">Antimuón</option>
+                            <option value="10">Mesón</option>
+                        </select>
+                    </div>
+                    
                 </div>
                 <div class="center2">
                     <h3>Campo eléctrico</h3>   
@@ -48,11 +53,14 @@
                         <input class="size2" type="number" id="magnitudE">
                         <input class="size" type="number" id="elevado2">
                     </div>
-                    <p>Sentido:</p>
-                    <select id="direccionE">
-                        <option value="1">Arriba</option>
-                        <option value="2">Abajo</option>
-                    </select>
+                    <div class="space">
+                        <p>Sentido:</p>
+                        <select class="space2" id="direccionE">
+                            <option value="1">Arriba</option>
+                            <option value="2">Abajo</option>
+                        </select>
+                    </div>
+                    
                 </div>
             </div>
             <div class="center">
@@ -68,7 +76,7 @@
                     <option value="2">Mediana</option>
                     <option value="3" selected>Pequeña</option>
                 </select>
-                <button class="center5" id="boton2" onclick=" ">Resetear</button>
+                <button class="center5" id="boton2" onclick="reload()">Resetear</button>
             </div>
         </div>
     </div>    
