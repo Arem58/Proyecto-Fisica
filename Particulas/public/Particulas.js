@@ -11,6 +11,10 @@ var color;
 var masa;
 var carga;
 var tamanio;
+var pressed = 0;
+var aceleration; 
+var time = 0; 
+var direccion; 
 
 //Funcion para obtener un color random, pero no colores oscuros.
 function GetRandomColor() {
@@ -42,6 +46,13 @@ Particle.prototype.Draw = function (ctx) {
     ctx.fill();
 }
 Particle.prototype.Update = function () {
+    if(direccion === 1){
+        
+    }else if(direccion === 2){
+
+    }else if(direccion === 3){
+
+    }
     this.x += this.vx;
     this.y += this.vy;
  
@@ -59,6 +70,7 @@ function loop() {
         particles[i].Draw(ctx);
     }
     requestAnimationFrame(loop);
+    time += 1;
 }
 //Inicio de creacion de las particulas.
 
@@ -69,6 +81,9 @@ function createParticle(){
     var MagnitudE = document.getElementById('magnitudE').value;
     var DireccionE = document.getElementById('direccionE').value;
     var Size = document.getElementById('Tamaño').value;
+    const Boton = document.getElementById('boton');
+    
+    //Tamanio de las particulas
     if(Size === '1'){
         tamanio = 7;
     }else if(Size === '2'){
@@ -77,6 +92,22 @@ function createParticle(){
     else if(Size === '3'){
         tamanio = 3;
     }
+
+    //direccion del campo
+    if(DireccionE === '2'){
+        magnitudE *= -1;
+    }
+
+    //direccion de la particula
+    if(DireccionP === 0 || DireccionP === 180){
+        direccion = 1;
+    }else if(DireccionP === 90){
+        direccion = 2;
+    }else{
+        direccion = 3;
+    }
+
+
     switch(tipoParticula) {
         //Electron
         case '1':
@@ -152,4 +183,9 @@ function createParticle(){
             // code block
         }
     loop();
+    Boton.disabled = true;
 }
+
+const aceleracion = (masa, carga, magnitudE) =>{
+    aceleration = ((carga*magnitudE)/masa)
+}   

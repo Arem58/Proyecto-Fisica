@@ -10,16 +10,20 @@
         <h1>Simulación</h1>
     </div>
     <div class="formulario">
-        <div>
+        <div class="particula">
+            <div class="configuracion">
+                <h2 class="conf">Configuración</h2>
+            </div>
             <div class="gridP">
                 <div class="center2"> 
+                    <h3>Particulas</h3>
                     <p>Magnitud:</p>
                     <input type="number" id="magnitudP"  >
                     <p>Direccion:</p>
                     <input type="number" id="direccionP"  >
                     <p>Elije una particula: </p>
                     <select id="particula">
-                        <option value="None"> </option>
+                        <option value="None">Ninguno</option>
                         <option value="1">Electrón</option>
                         <option value="2">Positrón</option>
                         <option value="3">Protón</option>
@@ -32,19 +36,19 @@
                         <option value="10">Mesón</option>
                     </select>
                 </div>
-                <div class="center2">   
+                <div class="center2">
+                    <h3>Campo eléctrico</h3>   
                     <p>Magnitud:</p>
                     <input type="number" id="magnitudE"  >
                     <p>Sentido:</p>
                     <select id="direccionE">
-                        <option value="None"> </option>
                         <option value="1">Arriba</option>
                         <option value="2">Abajo</option>
                     </select>
                 </div>
             </div>
             <div class="center">
-                <button class="boton1" onclick="createParticle()">Simular</button>
+                <button class="boton1" id="boton" onclick="createParticle()">Simular</button>
             </div>
         </div>
         <div>
@@ -57,6 +61,7 @@
                 <option value="2">Mediana</option>
                 <option value="3" selected>Pequeña</option>
             </select>
+            <button id="boton2" onclick=" ">Resetear</button>
         </div>
     </div>    
     
