@@ -62,11 +62,7 @@ Particle.prototype.Update = function () {
     this.x += velocidadX;
     this.y += velocidadY;
  
-    if (this.x<0 || this.x > canvas.width)
-        velocidadX = -velocidadX;
-    
-    if (this.y < 0 || this.y > canvas.height)
-        velocidadY = -velocidadY;
+
 }
 function loop() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
