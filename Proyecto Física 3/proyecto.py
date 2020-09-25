@@ -20,16 +20,15 @@ def plot():
 	print("""
 
 	            Cargas		Masas
-	Electrón =   -1.6
-	Positrón =   1.6
-	Protón =     -1.6
-	Neutrón =    1.67
-	Alpha =      3.2
-	Deuterio =   1.6
-	Muón =       -1.6
-	Mesón =      -1.6
-	Bosón =      -1.6
-	Tau =        -3.167
+	Electrón =   -1.6		9.11
+	Positrón =   1.6		9.11
+	Protón =     -1.6		1.67
+	Neutrón =    1.67		1.67
+	Alpha =      3.2		6.64
+	Deuterio =   1.6		3.34
+	Muón =       -1.6		1.88
+	Bosón =      -1.6		1.88
+	Tau =        -3.167		3.17
 	
 	""")
 	v = float(input("\tEscribe la velocidad de la particula (en números):"))
