@@ -15,6 +15,12 @@ var pressed = 0;
 var aceleration; 
 var time = 0; 
 var direccion; 
+var velocidadX;
+var velocidadY;
+var velX = 4 * Math.random() - 2;
+var velY = 4 * Math.random() - 2;
+var velocidadI;
+var radianes;
 
 //Funcion para obtener un color random, pero no colores oscuros.
 function GetRandomColor() {
@@ -32,8 +38,6 @@ function GetRandomColor() {
 var Particle = function (color, tamanio) {
     this.x = 0;
     this.y = canvas.height * 0.5;
-    this.vx = 4 * Math.random() - 2;
-    this.vy = 4 * Math.random() - 2;
     this.size = tamanio;
     this.Color = color;
 }
@@ -47,20 +51,33 @@ Particle.prototype.Draw = function (ctx) {
 }
 Particle.prototype.Update = function () {
     if(direccion === 1){
-        
+        velocidadX = 0;
+        velocidadY = velocidadI * (aceleration * time);
+        console.log(velocidadX);
+        console.log(velocidadY);
     }else if(direccion === 2){
-
+        velocidadX = velocidadI;
+        velocidadY = aceleration * time;
+        console.log(velocidadX);
+        console.log(velocidadY);
     }else if(direccion === 3){
-
+        velocidadX = velocidadI * Math.cos(radianes);
+        if(time === 0){
+            velocidadY = velocidadI * Math.sin(radianes);
+        }else{
+            velocidadY += aceleracion * time; 
+        }
+        console.log(velocidadX);
+        console.log(velocidadY);
     }
-    this.x += this.vx;
-    this.y += this.vy;
+    this.x += velX;
+    this.y += velY;
  
     if (this.x<0 || this.x > canvas.width)
-        this.vx = -this.vx;
- 
+        velX = -velX;
+    
     if (this.y < 0 || this.y > canvas.height)
-        this.vy = -this.vy;
+        velY = -velY;
 }
 function loop() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -83,6 +100,8 @@ function createParticle(){
     var Size = document.getElementById('Tamaño').value;
     const Boton = document.getElementById('boton');
     
+    velocidadI = MagnitudP;
+
     //Tamanio de las particulas
     if(Size === '1'){
         tamanio = 7;
@@ -105,6 +124,7 @@ function createParticle(){
         direccion = 2;
     }else{
         direccion = 3;
+        degrees_to_radians(DireccionP);
     }
 
 
@@ -140,43 +160,43 @@ function createParticle(){
         //Partícula alfa
         case '5':
             color = "rgb(" + 255 + "," + 102 + "," + 0 + ")";
-            carga = 3.2 * Math.pow(10, -19)
-            masa = 6.64 * Math.pow(10, -27)
+            carga = 3.2 * Math.pow(10, -19);
+            masa = 6.64 * Math.pow(10, -27);
             particles.push(new Particle(color, tamanio));
             break;
         //Núcleo de deuterio
         case '6':
             color = "rgb(" + 0 + "," + 230 + "," + 230 + ")";
-            carga = 1.6 * Math.pow(10, -19)
-            masa = 3.34 * Math.pow(10, -27)
+            carga = 1.6 * Math.pow(10, -19);
+            masa = 3.34 * Math.pow(10, -27);
             particles.push(new Particle(color, tamanio));
             break;
         //Muón
         case '7':
             color = "rgb(" + 102 + "," + 204 + "," + 0 + ")";
-            carga = -1.6 * Math.pow(10, -19)
-            masa = 1.88 * Math.pow(10, -28)
+            carga = -1.6 * Math.pow(10, -19);
+            masa = 1.88 * Math.pow(10, -28);
             particles.push(new Particle(color, tamanio));
             break;
         //Tau
         case '8':
             color = "rgb(" + 255 + "," + 77 + "," + 148 + ")";
-            carga = -1.6 * Math.pow(10, -19)
-            masa = 3.17 * Math.pow(10, -27)
+            carga = -1.6 * Math.pow(10, -19);
+            masa = 3.17 * Math.pow(10, -27);
             particles.push(new Particle(color, tamanio));
             break;
         //Bosón
         case '9':
             color = "rgb(" + 172 + "," + 0 + "," + 230 + ")";
-            carga = -1.6 * Math.pow(10, -19)
-            masa = 9.1 * Math.pow(10, -31)
+            carga = -1.6 * Math.pow(10, -19);
+            masa = 9.1 * Math.pow(10, -31);
             particles.push(new Particle(color, tamanio));
             break;
         //Mesón
         case '10':
             color = "rgb(" + 204 + "," + 102 + "," + 0 + ")";
-            carga = -1.6 * Math.pow(10, -19)
-            masa = 9.1 * Math.pow(10, -31)
+            carga = -1.6 * Math.pow(10, -19);
+            masa = 9.1 * Math.pow(10, -31);
             particles.push(new Particle(color, tamanio));
             break;
         default:
@@ -189,3 +209,9 @@ function createParticle(){
 const aceleracion = (masa, carga, magnitudE) =>{
     aceleration = ((carga*magnitudE)/masa)
 }   
+
+function degrees_to_radians(degrees)
+{
+  var pi = Math.PI;
+  radianes = degrees * (pi/180);
+}
