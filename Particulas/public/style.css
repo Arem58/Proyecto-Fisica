@@ -1,9 +1,18 @@
-body {
-    margin:0;
-    padding:0;
-    background:#000;
+html ,body {
+    display: flex;
+    background: none;
+    height: 100%;
+    width: 100%;
 }
  
 canvas {
     display:block;
+    background-color: black;
+    width: 45%;
+    height: 50%;
+}
+
+.formulario{
+    width: 35%;
+    height: 100%;
 }
