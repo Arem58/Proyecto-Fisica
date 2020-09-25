@@ -37,11 +37,12 @@ def plot():
 	d = 0.0001
 	m = float(input("\tEscribe la masa de la particula (en números):")) #9.10938291*(10**-31)
 	V = 1*(10**-19)
+	pq =1*(10**-31)
 	E = float(input("\tEscribe la magnitud del campo:"))
 	l = int(input("\tEn milimetros escribe la posición inicial en Y de la particula (en números):"))
 	t= linspace(0,10,15)
 
-	ecuation = ((+(((q*V)+v/(d*m))*t*t))/10) + l
+	ecuation = ((+(((q*V)+v/(d*(m*pq)))*t*t))/10) + l
 	
 	a = (q*(E*V)/m)
 	x = v*t
