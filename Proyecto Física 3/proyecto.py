@@ -3,7 +3,7 @@
 #Universidad del valle 
 
 #Por: Andree Toledo  18439
-#	  Renato estrada 18
+#	  Renato estrada 181899
 
 
 #Imports	
@@ -12,28 +12,53 @@ import math
 import matplotlib.pyplot as plt
 
 """
-En esta 3función se hace plot de cada particula
+En esta función se hace plot de cada particula
 """
 
 def plot():
-	v = float(input("\tEscribe la velocidad de la particula (en números):       "))
-	q = -float(input("\tEscribe la carga de la particula (en números):       "))
+
+	print("""
+
+	            Cargas		Masas
+	Electrón =   -1.6
+	Positrón =   1.6
+	Protón =     -1.6
+	Neutrón =    1.67
+	Alpha =      3.2
+	Deuterio =   1.6
+	Muón =       -1.6
+	Mesón =      -1.6
+	Bosón =      -1.6
+	Tau =        -3.167
+	
+	""")
+	v = float(input("\tEscribe la velocidad de la particula (en números):"))
+	q = -float(input("\tEscribe la carga de la particula (en números):"))
 	d = 0.0001
-	m = 9.10938291*(10**-31)
-	V = 1*(10**-15)
-	l = int(input("\tEn milimetros escribe la posición inicial en Y de la particula (en números):       "))
+	m = float(input("\tEscribe la masa de la particula (en números):")) #9.10938291*(10**-31)
+	V = 1*(10**-19)
+	E = float(input("\tEscribe la magnitud del campo:"))
+	l = int(input("\tEn milimetros escribe la posición inicial en Y de la particula (en números):"))
 	t= linspace(0,10,15)
-	ecuation = ((+(((-q*V)/(d*m))*t*t))/10) + l
+
+	ecuation = ((+(((q*V)+v/(d*m))*t*t))/10) + l
+	
+	a = (q*(E*V)/m)
+	x = v*t
+	y = v*t+((a*t**2)/2)
+
+
 
 	#trazar los datos como puntos de dispersión
 	plt.plot(t,ecuation,'r')
-	plt.ylabel('y-axis en metros')
-	plt.xlabel('x-axis en metros')
-	plt.title('Trayectoria')
+	plt.ylabel('y (m)')
+	plt.xlabel('x (m)')
+	plt.title('Campo con carga'+ " " + campo)
 
 #Se pregunta con cuantas particulas se quiere trabajar
-particles = int(input("Escribe la cantidad de particulas que deseas generar (en números)      "))
+campo = input("Ingrese el tipo de campo eléctrico (Positivo/Negativo)")
+particles = int(input("Escribe la cantidad de particulas que deseas generar (en números):"))
 for i in range(0,particles):
-	print("\nParticula " + str(i+1) + ":       ")
+	print("\nParticula " + str(i+1) + ":")
 	plot()
 plt.show()
