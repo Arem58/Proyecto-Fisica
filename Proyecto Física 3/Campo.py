@@ -1,6 +1,12 @@
 #!/usr/bin/env python3
 # coding: utf-8
 
+#Fisica 3 Proyecto 1
+#Universidad del valle 
+
+#Por: Andree Toledo  18439
+#	  Renato estrada 181099
+
 # # Se importan los módulos necesarios para la graficación
 import numpy as np
 import matplotlib.pyplot as plt
