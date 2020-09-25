@@ -12,7 +12,7 @@ import math
 import matplotlib.pyplot as plt
 
 """
-En esta función se hace plot de cada particula
+En esta 3función se hace plot de cada particula
 """
 
 def plot():
