@@ -6,14 +6,17 @@
     <link href="style.css" rel="stylesheet" />
 </head>
 <body>
+    <div class="tittle">
+        <h1>Simulación</h1>
+    </div>
     <div class="formulario">
-        <div class="center">
+        <div>
             <div class="gridP">
-                <div>
+                <div class="center2"> 
                     <p>Magnitud:</p>
-                    <input type="number" id="numero-formulario"  >
+                    <input type="number" id="magnitudP"  >
                     <p>Direccion:</p>
-                    <input type="number" id="numero-formulario"  >
+                    <input type="number" id="direccionP"  >
                     <p>Elije una particula: </p>
                     <select id="particula">
                         <option value="None"> </option>
@@ -29,22 +32,34 @@
                         <option value="10">Mesón</option>
                     </select>
                 </div>
-                <div>   
+                <div class="center2">   
                     <p>Magnitud:</p>
-                    <input type="number" id="numero-formulario"  >
+                    <input type="number" id="magnitudE"  >
                     <p>Sentido:</p>
-                    <select id="Direccion">
+                    <select id="direccionE">
                         <option value="None"> </option>
                         <option value="1">Arriba</option>
                         <option value="2">Abajo</option>
                     </select>
                 </div>
-                
+            </div>
+            <div class="center">
+                <button class="boton1" onclick="createParticle()">Simular</button>
             </div>
         </div>
-        <button onclick="createParticle()">Simular</button>
+        <div>
+            <div>
+                <canvas id="canvas"></canvas>
+            </div>
+            <p>Tamaño de la particula:</p>
+            <select id="Tamaño">
+                <option value="1">Grande</option>
+                <option value="2">Mediana</option>
+                <option value="3" selected>Pequeña</option>
+            </select>
+        </div>
     </div>    
-    <canvas id="canvas"></canvas>
+    
     <script src="Particulas.js"></script>
 </body>
 </html>
