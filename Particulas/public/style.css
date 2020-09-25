@@ -6,7 +6,6 @@ html ,body {
 }
  
 canvas {
-    display:block;
     background-color: black;
     width: 45%;
     height: 50%;
@@ -15,4 +14,18 @@ canvas {
 .formulario{
     width: 35%;
     height: 100%;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gridP{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
 }

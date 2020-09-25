@@ -7,7 +7,9 @@ var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 var particles = [];
 var num_particles = 1;//Cantidad de particulas en la window
-var color 
+var color; 
+var masa;
+var carga;
 
 //Funcion para obtener un color random, pero no colores oscuros.
 function GetRandomColor() {
@@ -32,7 +34,7 @@ var Particle = function (color) {
 //Se agregan dos metodos funcionales 
 Particle.prototype.Draw = function (ctx) {
     ctx.beginPath()
-    ctx.arc(this.x, this.y, 5, 0, 2 * Math.PI);
+    ctx.arc(this.x, this.y, 3, 0, 2 * Math.PI);
     ctx.fillStyle = this.Color;
     //ctx.fillRect(this.x, this.y, 2, 2);
     ctx.fill();
@@ -61,44 +63,74 @@ function loop() {
 function createParticle(){
     var tipoParticula = document.getElementById('particula').value;
     switch(tipoParticula) {
+        //Electron
         case '1':
             color = "rgb(" + 179 + "," + 0 + "," + 0 + ")";
+            carga = -1.6 * Math.pow(10, -19);
+            masa = 9.11 * Math.pow(10, -31);
             particles.push(new Particle(color));
             break;
+        //Positron
         case '2':
             color = "rgb(" + 230 + "," + 230 + "," + 230 + ")";
+            carga = 1.6 * Math.pow(10, -19);
+            masa = 9.11 * Math.pow(10, -31);
             particles.push(new Particle(color));
             break;
+        //Proton 
         case '3':
             color = "rgb(" + 204 + "," + 204 + "," + 0 + ")";
+            carga = 1.6 * Math.pow(10, -19);
+            masa = 1.67 * Math.pow(10, -27);
             particles.push(new Particle(color));
             break;
+        //Neutron
         case '4':
-            color = "rgb(" + 0 + "," + 0 + "," + 153 + ")";
+            color = "rgb(" + 179 + "," + 209 + "," + 255 + ")";
+            carga = 0;
+            masa = 1.67 * Math.pow(10, -27);
             particles.push(new Particle(color));
             break;
+        //Partícula alfa
         case '5':
             color = "rgb(" + 255 + "," + 102 + "," + 0 + ")";
+            carga = 3.2 * Math.pow(10, -19)
+            masa = 6.64 * Math.pow(10, -27)
             particles.push(new Particle(color));
             break;
+        //Núcleo de deuterio
         case '6':
             color = "rgb(" + 0 + "," + 230 + "," + 230 + ")";
+            carga = 1.6 * Math.pow(10, -19)
+            masa = 3.34 * Math.pow(10, -27)
             particles.push(new Particle(color));
             break;
+        //Muón
         case '7':
             color = "rgb(" + 102 + "," + 204 + "," + 0 + ")";
+            carga = -1.6 * Math.pow(10, -19)
+            masa = 1.88 * Math.pow(10, -28)
             particles.push(new Particle(color));
             break;
+        //Tau
         case '8':
             color = "rgb(" + 255 + "," + 77 + "," + 148 + ")";
+            carga = -1.6 * Math.pow(10, -19)
+            masa = 3.17 * Math.pow(10, -27)
             particles.push(new Particle(color));
             break;
+        //Bosón
         case '9':
             color = "rgb(" + 172 + "," + 0 + "," + 230 + ")";
+            carga = -1.6 * Math.pow(10, -19)
+            masa = 9.1 * Math.pow(10, -31)
             particles.push(new Particle(color));
             break;
+        //Mesón
         case '10':
             color = "rgb(" + 204 + "," + 102 + "," + 0 + ")";
+            carga = -1.6 * Math.pow(10, -19)
+            masa = 9.1 * Math.pow(10, -31)
             particles.push(new Particle(color));
             break;
         default:
