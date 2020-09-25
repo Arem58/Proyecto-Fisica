@@ -64,14 +64,14 @@ Particle.prototype.Update = function () {
             velocidadY += (aceleracion * time); 
         }
     }
-    this.x += velX;
-    this.y += velY;
+    this.x += velocidadX;
+    this.y += velocidadY;
  
     if (this.x<0 || this.x > canvas.width)
-        velX = -velX;
+        velocidadX = -velocidadX;
     
     if (this.y < 0 || this.y > canvas.height)
-        velY = -velY;
+        velocidadY = -velocidadY;
 }
 function loop() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -227,7 +227,7 @@ function createParticle(){
 }
 
 const aceleracion = (masa, carga, magnitudE, notacion) =>{
-    aceleration = ((carga*magnitudE)/masa)/Math.pow(10, (notacion + 11));
+    aceleration = ((carga*magnitudE)/masa)/Math.pow(10, (notacion + 13));
     console.log(aceleration);
 }   
 
