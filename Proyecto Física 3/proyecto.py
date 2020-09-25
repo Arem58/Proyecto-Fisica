@@ -25,6 +25,7 @@ def plot():
 	t= linspace(0,10,15)
 	ecuation = ((+(((-q*V)/(d*m))*t*t))/10) + l
 
+
 	#trazar los datos como puntos de dispersión
 	plt.plot(t,ecuation,'r')
 	plt.ylabel('y-axis en metros')
