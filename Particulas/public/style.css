@@ -37,7 +37,7 @@ h2{
 
 h3{
     margin-bottom: 20px;
-    font-size: 25px;
+    font-size: 20px;
     color: white;
     font-family: "Mitr";
 }
@@ -113,7 +113,7 @@ canvas {
     width: 60%;
 }
 .size2{
-    width: 80%;
+    width: 85%;
 }
 
 .boton1{
@@ -183,4 +183,18 @@ canvas {
 
 .hola{
     color: black;
+}
+
+.hola2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.size3{
+    font-size: 15px;
+}
+
+.size4{
+    height: 22px;
 }
