@@ -59,8 +59,6 @@ Particle.prototype.Update = function () {
         velocidadY = aceleration * time;
     }else if(direccion === 3){
         velocidadY = velocidadD + (aceleration * time); 
-        console.log(velocidadY);
-        console.log(velocidadX);
     }
     this.x += velocidadX;
     this.y += velocidadY;
