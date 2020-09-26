@@ -44,9 +44,9 @@ h3{
 
 canvas {
     background-color: black;
-    width: 70%;
+    width: 75%;
     height: 62%;
-    margin-left: 100px;
+    margin-left: 135px;
 }
 
 .particula{
@@ -57,7 +57,7 @@ canvas {
     width: 100%;
     height: 85%;
     display: grid;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 35% 65%;
     background-color: #cccccc;
 }
 
@@ -76,15 +76,20 @@ canvas {
 .center3{
     width: 100%;
     display: block;
+    margin-top: 10px; 
     margin: auto;
 }
 
 .center4{
-    margin-left: 100px;    
+    margin-left: 135px; 
+    display: grid;
+    margin-top: 5px; 
+    grid-template-columns: 23.4% 16% 47.8%;
 }
 
 .center5{
-    margin-left: 615px;    
+    margin-left: 82.7%;   
+    margin-top: 8px; 
 }
 
 .gridP{
@@ -102,11 +107,17 @@ canvas {
 
 .tittle{
     width: 100%;
-    height: 15%;
-    background-color: #f2f2f2;
+    height: 13%;
+    background-color: #bfbfbf;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.paint{
+    background-color: #f2f2f2;
+    height: 2%;
+    width: 100%;
 }
 
 .size{
@@ -114,6 +125,7 @@ canvas {
 }
 .size2{
     width: 85%;
+    height: 22px;
 }
 
 .boton1{
@@ -178,11 +190,18 @@ canvas {
 }
 
 .space2{
-    width: 150px;
+    height: 21px;
+    width: 100%;
 }
 
 .hola{
     color: black;
+    margin-right: 15px;
+}
+
+.hola4{
+    color: black;
+    margin-right: 10px;
 }
 
 .hola2{
@@ -197,4 +216,32 @@ canvas {
 
 .size4{
     height: 22px;
+}
+
+.size5{
+    height: 21px;
+    width: 100%;
+}
+
+.trayectoria{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.space3{
+    margin-right: 5px;
+}
+
+.hola3{
+    display: flex;
+    margin-left: auto;
+}
+
+.hola5{
+    margin-top: 30px;
+}
+
+.size6{
+    width: 100%;
 }
