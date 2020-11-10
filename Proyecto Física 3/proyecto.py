@@ -28,17 +28,18 @@ def plot():
 	Deuterio =   1.6		3.34
 	Muón =       -1.6		1.88
 	Bosón =      -1.6		1.88
-	Tau =        -3.167		3.17
+	Tau =        -1.6		2.76
 	
 	""")
-	v = float(input("\tEscribe la velocidad de la particula (en números):"))
-	q = -float(input("\tEscribe la carga de la particula (en números):"))
+	v = float(input("\tEscribe la velocidad Inicial de la particula m/s (en números):"))
+	q = float(input("\tEscribe la carga de la particula (en números):"))
 	d = 0.0001
+	luz = 3*(10**+8)
 	m = float(input("\tEscribe la masa de la particula (en números):")) #9.10938291*(10**-31)
 	V = 1*(10**-19)
 	pq =1*(10**-31)
-	E = float(input("\tEscribe la magnitud del campo:"))
-	l = int(input("\tEn milimetros escribe la posición inicial en Y de la particula (en números):"))
+	E = float(input("\tEscribe la magnitud del campo en N/C:"))
+	l = int(input("\tEn milimetros escribe Longitud de la región (en números):"))
 	t= linspace(0,10,15)
 
 	ecuation = ((+(((q*V)+v/(d*(m*pq)))*t*t))/10) + l
@@ -53,10 +54,10 @@ def plot():
 	plt.plot(t,ecuation,'r')
 	plt.ylabel('y (m)')
 	plt.xlabel('x (m)')
-	plt.title('Campo con carga'+ " " + campo)
+	plt.title('Trayectoria')
 
 #Se pregunta con cuantas particulas se quiere trabajar
-campo = input("Ingrese el tipo de campo eléctrico (Positivo/Negativo)")
+
 particles = int(input("Escribe la cantidad de particulas que deseas generar (en números):"))
 for i in range(0,particles):
 	print("\nParticula " + str(i+1) + ":")
